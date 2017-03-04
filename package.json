@@ -1,0 +1,36 @@
+{
+  "name": "estudiar-las-rutas-en-expressjs-eduardo-guillermo-oscar-sergio",
+  "version": "1.0.0",
+  "description": "Estudio de los métodos de direccionamiento de ExpressJS",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ULL-ESIT-PL-1617/estudiar-las-rutas-en-expressjs-eduardo-guillermo-oscar-sergio.git"
+  },
+  "author": "Óscar Darias Plasencia, Eduardo de la Paz González, Guillermo Esquivel González y Sergio García de la Iglesia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ULL-ESIT-PL-1617/estudiar-las-rutas-en-expressjs-eduardo-guillermo-oscar-sergio/issues"
+  },
+  "homepage": "https://github.com/ULL-ESIT-PL-1617/estudiar-las-rutas-en-expressjs-eduardo-guillermo-oscar-sergio#readme",
+  "devDependencies": {
+    "gh-pages": "^0.12.0",
+    "gitbook-cli": "^2.3.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-jshint": "^2.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-shell": "^0.6.1",
+    "gulp-uglify": "^2.0.1",
+    "jshint": "^2.9.4",
+    "shell-task": "^1.0.0"
+  }
+}
