@@ -48,28 +48,9 @@ app.put('/user', function (req, res){
 Respuesta a una petición de borrado al`/user`recorrido:
 
 ```
-app
-.
-delete
-(
-'/user'
-,
-function
-(
-req
-,
- res
-)
-{
-
-  res
-.
-send
-(
-'Got a DELETE request at /user'
-)
-}
-)
+app.delete('/user', function(req, res){
+    res.send('Got a DELETE request at /user')
+})
 ```
 
 
