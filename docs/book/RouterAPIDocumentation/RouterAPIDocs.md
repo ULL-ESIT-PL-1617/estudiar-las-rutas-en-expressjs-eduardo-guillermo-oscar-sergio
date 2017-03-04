@@ -61,6 +61,8 @@ Añade disparadores que se asocian a los parámetros especificados por el parám
 * El valor del parámetro _name_.
 * El nombre del parámetro.
 
+Se hace uso de estos parámetros tanto en múltiples ejemplos de este tutorial como en los ejemplos elaborados del directorio `src`.
+
 
 * __router.route(path)__
 
