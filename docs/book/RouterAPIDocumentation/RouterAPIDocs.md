@@ -38,17 +38,20 @@ app.use('/requests', router);
 
 Los procedimientos que los objetos router ponen a nuestra disposición son muy similares a las de los objetos express.
 
-###### router.METHOD(path, [callback, ...] callback)
+
+* ##### router.METHOD(path, [callback, ...] callback)
 
 Este tipo de métodos provee la función de direccionamiento de Express, donde METHOD es uno de los métodos del protocolo HTTP, como GET, PUT o POST. Estos se escriben en letras minúsculas, siendo `router.get()`, `router.put()` y `router.post()` los métodos a nuestra disposición, entre otros. Nótese que su nombre es el mismo que el método original del protocolo HTTP, pero en minúsculas.
 
 Estos métodos soportan múltiples _callbacks_, que son tratadas por igual y que se comportan a modo de middleware, con la diferencia de que pueden invocar al método `next('route')` para ceder el control a otras _callbacks_. Este mecanismo se utiliza para pasar el control a otras funciones cuando ya no hay razón para continuar con la ejecución de la función actual.
 
-###### router.all(path, [callback, ...] callback)
+
+* ##### router.all(path, [callback, ...] callback)
 
 Este método se comporta de forma similar a los anteriores, pero responde a todos los métodos HTTP. Es especialmente útil para aplicar una lógica "global" a las peticiones a las que responde nuestro router.
 
-###### router.param(name, callback)
+
+* ##### router.param(name, callback)
 
 Añade disparadores que se asocian a los parámetros especificados por el parámetro _name_. Al accederse al parámetro, se dispara la función _callback_. Los parámetros de esta función son:
 
@@ -58,7 +61,8 @@ Añade disparadores que se asocian a los parámetros especificados por el parám
 * El valor del parámetro _name_.
 * El nombre del parámetro.
 
-###### router.route(path)
+
+* ##### router.route(path)
 
 Este método devuelve una instancia de una ruta que puede utilizarse para manejar diversas funciones HTTP. Básicamente devuelve una ruta completa que puede utilizar los métodos del tipo `router.METHOD()`. Veamos un ejemplo:
 
@@ -88,9 +92,30 @@ router.route('/home/:userID')
 ```
 
 
+* ##### router.use([path], [function, ...] function)
 
+Al inicio de este capítulo, explicamos que los objetos router pueden utilizarse no sólo como un argumento de un método `use()` de un objeto Express, sino también pueden pasarse como argumentos a los métodos a los métodos `use()` de otro objeto router. Estos métodos, por tanto, también existen en los router y aceptan tanto funciones middleware como otros objetos router.
 
+El siguiente ejemplo representa un uso muy sencillo de este tipo de funciones. Todas las peticiones a ese router pasarán primero por este middleware:
 
+```
+router.use(function(req, res, next) {
+  console.log('%s %s %s', req.method, req.url, req.path):
+  next();
+});
+```
+
+El orden en el que se definen los middleware a utilizar con `router.use()` es muy importante, ya que estos se invocan de forma secuencial. Por tanto, el orden en el que estén escritos en el código fuente será el orden de precedencia en la ejecución. Por ejemplo, si queremos servir ficheros desde múltiples directorios utilizando el middleware _static_, podemos definir varios usos del mismo con distintos directorios.
+
+```
+app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/png-photos'));
+app.use(express.static(__dirname + '/jpg-photos'));
+```
+
+La prioridad es dada al directorio _public_, y seguirá buscando en el caso de que no encuentre allí el recurso.
+
+Es importante saber que aunque las funciones middleware se asocien a un router en particular, el cuándo son ejecutadas depende más bien de la ruta a la que pertenezcan en la estructura de directorios del proyecto. Por tanto, los middleware asociados a un determinado router podrían ejecutarse para otro router si ambos se encuentran en el mismo directorio del proyecto. Por ello, para evitar este comportamiento, suele ser recomendable situar a los distintos router en distintos directorios.
 
 
 
