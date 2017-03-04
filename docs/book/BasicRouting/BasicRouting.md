@@ -25,62 +25,24 @@ Responder con`Hello World!`en la página principal:
 
 ```
 app.get('/', function (req, res){
- res.send('Hello World!')
+    res.send('Hello World!')
 })
 ```
 
 Responder a POST solicitud en la ruta raíz \(`/`\), la página principal de la aplicación:
 
 ```
-app
-.
-post
-(
-'/'
-,
-function
-(
-req
-,
- res
-)
-{
-
-  res
-.
-send
-(
-'Got a POST request'
-)
-}
-)
+app.post('/', function(req, res){
+    res.send('Got a POST request')
+})
 ```
 
 Responder a una solicitud PUT a la`/user`ruta:
 
 ```
-app
-.
-put
-(
-'/user'
-,
-function
-(
-req
-,
- res
-)
-{
-
-  res
-.
-send
-(
-'Got a PUT request at /user'
-)
-}
-)
+app.put('/user', function (req, res){
+    res.send('Got a PUT request at /user')
+})
 ```
 
 Respuesta a una petición de borrado al`/user`recorrido:
