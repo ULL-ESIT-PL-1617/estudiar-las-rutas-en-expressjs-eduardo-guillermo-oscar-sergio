@@ -21,9 +21,8 @@ En esta práctica nuestra misión es investigar acerca de las rutas en ExpressJS
 * [Github](https://github.com/ULL-ESIT-PL-1617/estudiar-las-rutas-en-expressjs-eduardo-guillermo-oscar-sergio).
 
 * [gh-pages del libro](https://github.com/ULL-ESIT-PL-1617/estudiar-las-rutas-en-expressjs-eduardo-guillermo-oscar-sergio).
+
 ---
-
-
 ## Integrantes del equipo
 
 * **Eduardo de la Paz González**, [alu0100893267](https://alu0100893267.github.io), [Campus](https://campusvirtual.ull.es/1617/user/view.php?id=9458&course=1148).
