@@ -23,7 +23,7 @@ app.METHOD(PATH, HANDLER)
 
 Responder con`Hello World!`en la página principal:
 
-```
+```js
 app.get('/', function (req, res){
     res.send('Hello World!')
 })
@@ -31,7 +31,7 @@ app.get('/', function (req, res){
 
 Responder a POST solicitud en la ruta raíz \(`/`\), la página principal de la aplicación:
 
-```
+```js
 app.post('/', function(req, res){
     res.send('Got a POST request')
 })
@@ -39,7 +39,7 @@ app.post('/', function(req, res){
 
 Responder a una solicitud PUT a la`/user`ruta:
 
-```
+```js
 app.put('/user', function (req, res){
     res.send('Got a PUT request at /user')
 })
@@ -47,7 +47,7 @@ app.put('/user', function (req, res){
 
 Respuesta a una petición de borrado al`/user`recorrido:
 
-```
+```js
 app.delete('/user', function(req, res){
     res.send('Got a DELETE request at /user')
 })
