@@ -118,3 +118,7 @@ app.use(express.static(__dirname + '/jpg-photos'));
 La prioridad es dada al directorio _public_, y seguirá buscando en el caso de que no encuentre allí el recurso.
 
 Es importante saber que aunque las funciones middleware se asocien a un router en particular, el cuándo son ejecutadas depende más bien de la ruta a la que pertenezcan en la estructura de directorios del proyecto. Por tanto, los middleware asociados a un determinado router podrían ejecutarse para otro router si ambos se encuentran en el mismo directorio del proyecto. Por ello, para evitar este comportamiento, suele ser recomendable situar a los distintos router en distintos directorios.
+
+---
+
+En el directorio src de este proyecto, hemos dejado un ejemplo sobre cómo funcionan los objetos router. La tarea de gulp `routing` ejecuta el ejemplo de forma automática: luego simplemente basta con acceder en un navegador a `localhost:8000/user/id`. En la terminal se mostrará una serie de información. Observar el código escrito en `appRouter.js` y en `myRouter.js`. 
