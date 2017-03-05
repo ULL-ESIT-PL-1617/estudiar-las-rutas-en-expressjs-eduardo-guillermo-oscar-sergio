@@ -14,3 +14,10 @@ gulp.task('deploy-gh-pages', function() {
   return gulp.src('')
 		.pipe(shell(['node ../scripts/deploy-gh-pages.js']));
 });
+
+//Tarea que muestra como ejemplo el funcionamiento de Router
+//Ejecutar y luego desde el navegador, acceder a localhost:8000/user/id
+gulp.task('routing', function() {
+  return gulp.src('')
+    .pipe(shell(['node ../src/appRouter.js']));
+});
