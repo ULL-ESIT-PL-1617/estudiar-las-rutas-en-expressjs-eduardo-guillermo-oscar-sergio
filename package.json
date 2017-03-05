@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/ULL-ESIT-PL-1617/estudiar-las-rutas-en-expressjs-eduardo-guillermo-oscar-sergio#readme",
   "devDependencies": {
+    "express": "^4.15.0",
     "gh-pages": "^0.12.0",
     "gitbook-cli": "^2.3.0",
     "gulp": "^3.9.1",
