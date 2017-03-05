@@ -144,25 +144,25 @@ function errorHandler(err, req, res, next) {
 
 ###Middleware incorporado
 
-Excepto __express.static__, todas las funciones de middlware que se incluían previamente con Express están ahora en módulos diferentes. La única función de middleware incorporada en Express es __express.static__. Esta función es responsable del servicio de activos estáticos de una aplicación. 
+Excepto __express.static__, todas las funciones de middlware que se incluían previamente con Express están ahora en módulos diferentes. La única función de middleware incorporada en Express es __express.static__. Esta función es responsable del servicio de activos estáticos de una aplicación.
 El argumento __root__ especifica el directorio raíz desde el que se realizan los servicios.
 El objeto __options__ opcional puede tener las siguientes propiedades:
 
-*dotfiles: Opción para el servicio de dotfiles. Posibles valores: "allow", "deny" e "ignore".
+* dotfiles: Opción para el servicio de dotfiles. Posibles valores: "allow", "deny" e "ignore".
 
-*etag: Habilitar o inhabilitar la generación de etag. Posibles valores: true o false.
+* etag: Habilitar o inhabilitar la generación de etag. Posibles valores: true o false.
 
-*extension: Establece las reservas de extensiones de archivos. (Matriz).
+* extension: Establece las reservas de extensiones de archivos. (Matriz).
 
-*index: Envía el archivo de índices de directorios.
+* index: Envía el archivo de índices de directorios.
 
-*lastModified: Se establece en la última fecha de modificación del archivo en el sistema operativo. Posibles valores: true o false.
+* lastModified: Se establece en la última fecha de modificación del archivo en el sistema operativo. Posibles valores: true o false.
 
-*maxAge: Se establece la cabecera Cache-Control en milisegundos.
+* maxAge: Se establece la cabecera Cache-Control en milisegundos.
 
-*redirect: Redirecciona a la "/" final cuando el nombre de vía de acceso es un directorio.
+* redirect: Redirecciona a la "/" final cuando el nombre de vía de acceso es un directorio.
 
-*setHeaders: Función para establecer las cabeceras HTTP que se sirven con el archivo.
+* setHeaders: Función para establecer las cabeceras HTTP que se sirven con el archivo.
 
 A continuación se expone un ejemplo de una función de middleware __express.static__ con un objeto options especificado:
 
