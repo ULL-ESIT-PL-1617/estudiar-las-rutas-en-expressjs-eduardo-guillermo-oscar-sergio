@@ -1,5 +1,4 @@
 #Using middleware
----
 
 Una aplicación Express es fundamentalmente una serie de llamadas a funciones de middleware.
 
