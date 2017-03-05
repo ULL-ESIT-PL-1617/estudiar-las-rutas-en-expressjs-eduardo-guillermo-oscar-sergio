@@ -145,7 +145,9 @@ function errorHandler(err, req, res, next) {
 ###Middleware incorporado
 
 Excepto __express.static__, todas las funciones de middlware que se incluían previamente con Express están ahora en módulos diferentes. La única función de middleware incorporada en Express es __express.static__. Esta función es responsable del servicio de activos estáticos de una aplicación.
+
 El argumento __root__ especifica el directorio raíz desde el que se realizan los servicios.
+
 El objeto __options__ opcional puede tener las siguientes propiedades:
 
 * dotfiles: Opción para el servicio de dotfiles. Posibles valores: "allow", "deny" e "ignore".
@@ -181,5 +183,28 @@ var options = {
 
 app.use(express.static('public', options));
 ```
+###Middleware de terceros
 
+El middleware de terceros es muy útil a la hora de añadir funcionalidad a las aplicaciones Express. Se ha de tener instalado __npm__ para poder añadir dichos paquetes.
+
+Por ejemplo para la utilización de una función muy utilizada como es el análisis de cookies con __cookie-parser__ se deberán de seguir los siguientes pasos:
+
+```sh
+$ npm install cookie-parser
+```
+
+Y una vez instalado, ya podremos usarlo en nuestro código:
+
+```js
+var express = require('express');
+var app = express();
+var cookieParser = require('cookie-parser');
+
+// load the cookie-parsing middleware
+app.use(cookieParser());
+```
+
+Hay muchas más funciones de middleware de terceros que se utilizan con Express.
+
+En el siguiente enlace puede consultar una lista con las principales funciones y sus utlidades: [Funciones de middleware de terceros](http://expressjs.com/es/resources/middleware.html)
 
