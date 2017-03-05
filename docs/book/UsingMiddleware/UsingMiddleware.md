@@ -96,7 +96,7 @@ app.use('/', router);
 
 ###Middlware de manejo de errores
 
-El middleware de manejo de errores, siempre utiliza cuatro argumentos. Se deben insertar siempre los 4 argumentos para que se pueda identificar bien que es una función middleware de manejo de errores. Se debe de incluir el objeto next, aunque no se necesite su uso, para fijar los 4 argumentos y que no se tome como un middleware normal.
+El middleware de manejo de errores, siempre utiliza __cuatro__ argumentos. Se deben __insertar siempre los 4 argumentos__ para que se pueda identificar bien que es una función middleware de manejo de errores. Se debe de incluir el objeto next, aunque no se necesite su uso, para fijar los 4 argumentos y que no se tome como un middleware normal.
 
 El argumento adicional que lleva un middleware de manejo de errores es el argumento __err__ que se suele indicar al principio de los 4:
 
@@ -121,7 +121,7 @@ app.use(clientErrorHandler);
 app.use(errorHandler);
 ```
 
-Donde clientErrorHandler es un middleware de manejo de errores que podría estar definido de la siguiente manera:
+Donde __clientErrorHandler__ es un middleware de manejo de errores que podría estar definido de la siguiente manera:
 
 ```js
 function clientErrorHandler(err, req, res, next) {
@@ -133,7 +133,7 @@ function clientErrorHandler(err, req, res, next) {
 }
 ```
 
-Y errorHandler sería la función final que detecta todos los errores:
+Y __errorHandler__ sería la función final que detecta todos los errores:
 
 ```js
 function errorHandler(err, req, res, next) {
@@ -141,3 +141,45 @@ function errorHandler(err, req, res, next) {
   res.render('error', { error: err });
 }
 ```
+
+###Middleware incorporado
+
+Excepto __express.static__, todas las funciones de middlware que se incluían previamente con Express están ahora en módulos diferentes. La única función de middleware incorporada en Express es __express.static__. Esta función es responsable del servicio de activos estáticos de una aplicación. 
+El argumento __root__ especifica el directorio raíz desde el que se realizan los servicios.
+El objeto __options__ opcional puede tener las siguientes propiedades:
+
+*dotfiles: Opción para el servicio de dotfiles. Posibles valores: "allow", "deny" e "ignore".
+
+*etag: Habilitar o inhabilitar la generación de etag. Posibles valores: true o false.
+
+*extension: Establece las reservas de extensiones de archivos. (Matriz).
+
+*index: Envía el archivo de índices de directorios.
+
+*lastModified: Se establece en la última fecha de modificación del archivo en el sistema operativo. Posibles valores: true o false.
+
+*maxAge: Se establece la cabecera Cache-Control en milisegundos.
+
+*redirect: Redirecciona a la "/" final cuando el nombre de vía de acceso es un directorio.
+
+*setHeaders: Función para establecer las cabeceras HTTP que se sirven con el archivo.
+
+A continuación se expone un ejemplo de una función de middleware __express.static__ con un objeto options especificado:
+
+```js
+var options = {
+  dotfiles: 'ignore',
+  etag: false,
+  extensions: ['htm', 'html'],
+  index: false,
+  maxAge: '1d',
+  redirect: false,
+  setHeaders: function (res, path, stat) {
+    res.set('x-timestamp', Date.now());
+  }
+}
+
+app.use(express.static('public', options));
+```
+
+
