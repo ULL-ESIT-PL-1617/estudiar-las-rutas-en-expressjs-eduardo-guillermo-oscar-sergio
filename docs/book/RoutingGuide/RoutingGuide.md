@@ -189,12 +189,20 @@ app.get('/about/sergio4', [b1, b2], function (req, res, next) {
 
 Hasta ahora hemos visto el método de respuesta *send*, sin embargo existen bastante más con sus propias funcionalidades. Es vital que exista un método de respuesta ya que sino la petición se queda colgada. A continuación se ponen los métodos de respuesta.
 
-__res.download()__: Solicita un archivo para descargarlo.
-__res.end()__: Finaliza el proceso de respuesta.
-__res.json()__: Envía una respuesta JSON.
-__res.jsonp()__: Envía una respuesta JSON con soporte JSONP.
-__res.redirect()__: Redirecciona una solicitud.
-__res.render()__: Representa una plantilla de vista.
-__res.send()__: Envía una respuesta de varios tipos.
-__res.sendFile()__: Envía un archivo como una secuencia de octetos.
+__res.download()__: Solicita un archivo para descargarlo.  
+
+__res.end()__: Finaliza el proceso de respuesta.  
+
+__res.json()__: Envía una respuesta JSON.  
+
+__res.jsonp()__: Envía una respuesta JSON con soporte JSONP.  
+
+__res.redirect()__: Redirecciona una solicitud.  
+
+__res.render()__: Representa una plantilla de vista.  
+
+__res.send()__: Envía una respuesta de varios tipos.  
+
+__res.sendFile()__: Envía un archivo como una secuencia de octetos.  
+
 __res.sendStatus()__: Establece el código de estado de la respuesta y envía su representación de serie como el cuerpo de respuesta.
