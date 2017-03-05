@@ -94,3 +94,50 @@ router.get('/user/:id', function (req, res, next) {
 app.use('/', router);
 ```
 
+###Middlware de manejo de errores
+
+El middleware de manejo de errores, siempre utiliza cuatro argumentos. Se deben insertar siempre los 4 argumentos para que se pueda identificar bien que es una función middleware de manejo de errores. Se debe de incluir el objeto next, aunque no se necesite su uso, para fijar los 4 argumentos y que no se tome como un middleware normal.
+
+El argumento adicional que lleva un middleware de manejo de errores es el argumento __err__ que se suele indicar al principio de los 4:
+
+```js
+app.use(function(err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send('¡Algo falló!');
+});
+```
+
+El middleware de manejo de errores se define al final, después de otras llamadas de __rutas__ y __app.use()__. Las respuestas de una función middleware pueden estar en el formato que se prefiera, como por ejemplo, una página de errores HTML.
+
+El siguiente ejemplo, muestra la ejecución de un código con middlewares como los que se han visto hasta ahora, y un middleware de manejo de errores definido debajo:
+
+```js
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
+
+app.use(bodyParser());
+app.use(methodOverride());
+app.use(clientErrorHandler);
+app.use(errorHandler);
+```
+
+Donde clientErrorHandler es un middleware de manejo de errores que podría estar definido de la siguiente manera:
+
+```js
+function clientErrorHandler(err, req, res, next) {
+  if (req.xhr) {
+    res.status(500).send({ error: 'Something failed!' });
+  } else {
+    next(err);
+  }
+}
+```
+
+Y errorHandler sería la función final que detecta todos los errores:
+
+```js
+function errorHandler(err, req, res, next) {
+  res.status(500);
+  res.render('error', { error: err });
+}
+```
