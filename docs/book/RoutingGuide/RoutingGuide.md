@@ -70,8 +70,9 @@ app.get('/PL?', function(req, res) {
 });
 
 // Esta vía de acceso coincidirá con las solicitudes PL o P
+// El símbolo *?* indica que el carácter anterior puede o no aparecer.
 ~~~
-El símbolo *?* indica que el carácter anterior puede o no aparecer.
+
 ---
 ~~~
 app.get('/Procesadores+', function(req, res) {
@@ -79,8 +80,8 @@ app.get('/Procesadores+', function(req, res) {
 });
 
 // Esta vía de acceso coincidirá con las solicitudes "Procesadores", "Procesadoress", "Procesadoresss", ..., etc.
+// El símbolo *+* indica que el carácter anterior debe aparecer como mínimo una vez y no tiene número máximo.
 ~~~
-El símbolo *+* indica que el carácter anterior debe aparecer como mínimo una vez y no tiene número máximo.
 ---
 ~~~
 app.get('abo*ut', function(req, res) {
@@ -88,8 +89,8 @@ app.get('abo*ut', function(req, res) {
 });
 
 // Esta vía de acceso coincidirá con las solicitudes "about", "abotttttut", "abo652438ut", ..., etc.
+// El símbolo *\** indica que en su posición puede aparecer cualquier cosa, incluso un espacio vacío.
 ~~~
-El símbolo *\** indica que en su posición puede aparecer cualquier cosa, incluso un espacio vacío.
 ---
 ~~~
 app.get('/abb(ou)?t', function(req, res) {
@@ -97,8 +98,8 @@ app.get('/abb(ou)?t', function(req, res) {
 });
 
 // Está vía de acceso coincidirá con las solicitudes "abbt" o "abbout".
+// En este caso el símbolo *?* afecta a los paréntesis anteriores.
 ~~~
-En este caso el símbolo *?* afecta a los paréntesis anteriores.
 
 #### Expresiones regulares
 
