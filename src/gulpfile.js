@@ -9,6 +9,19 @@ gulp.task('build', function() {
 		.pipe(shell(['sudo gitbook build ../docs ../gh-pages']));
 });
 
+//Heroku
+gulp.task('heroku', function() {
+  return gulp.src('')
+		.pipe(shell([
+         'sudo heroku login',
+         'heroku create',
+         'git push heroku master',
+         'heroku open'
+         //Falta añadir el link de la app
+       ])));
+});
+
+
 //Despliegue del libro en GitHub Pages
 gulp.task('deploy-gh-pages', function() {
   return gulp.src('')
