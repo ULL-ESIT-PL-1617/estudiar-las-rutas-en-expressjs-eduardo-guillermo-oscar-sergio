@@ -22,8 +22,9 @@ gulp.task('heroku', function() {
        ]));
 });
 
-gulp.task('build-book', function() {
-        return gulp.src('').pipe(shell(['gitbook build txt public']));
+gulp.task('deploygb', function() {
+  return gulp.src('')
+    .pipe(shell(['node ./scripts/deploy-gibook.js']));
 });
 
 //Despliegue del libro en GitHub Pages
