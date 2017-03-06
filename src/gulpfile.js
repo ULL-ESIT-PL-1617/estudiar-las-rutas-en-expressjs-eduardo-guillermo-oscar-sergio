@@ -21,3 +21,11 @@ gulp.task('routing', function() {
   return gulp.src('')
     .pipe(shell(['node ../src/appRouter.js']));
 });
+
+
+//Tarea que prueba los funcionamientos estudiados en el capítulo 2
+//Ejecutar y viendo los métodos de ruta (routingGuide.js o en el RoutingGuide.md), ir probando.
+gulp.task('routing-guide', function() {
+  return gulp.src('')
+    .pipe(shell(['node ../src/routingGuide.js']));
+})
