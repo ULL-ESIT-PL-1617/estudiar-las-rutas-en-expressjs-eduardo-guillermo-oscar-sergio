@@ -1,8 +1,6 @@
 var express = require('express');
 var app = express();
 
-app.use(express.static('public'));
-
 
 //
 // Métodos de ruta
@@ -151,12 +149,6 @@ app.get('/download', function (req, res) {
 app.get('/end', function (req, res) {
   console.log('end');
   res.end();
-});
-
-
-app.get('/sendFile', function (req, res) {
-  console.log('sendFile');
-  res.sendFile('index.html');
 });
 
 //Método sendStatus
