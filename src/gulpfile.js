@@ -13,9 +13,10 @@ gulp.task('build', function() {
 gulp.task('heroku', function() {
   return gulp.src('')
 		.pipe(shell([
-         'sudo heroku login',
+         'cd ..',
+	 'sudo heroku login',
          'heroku create',
-         'git push heroku master',
+         'git push heroku master:master',
          'heroku open'
          //Falta añadir el link de la app
        ]));
