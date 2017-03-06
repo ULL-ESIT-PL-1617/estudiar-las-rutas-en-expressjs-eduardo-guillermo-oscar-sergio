@@ -24,7 +24,7 @@ En esta práctica nuestra misión es investigar acerca de las rutas en ExpressJS
 
 * [Gitbook](https://www.gitbook.com/book/alu0100881677/estudiar-las-rutas-en-express/details). 
 
-*[Heroku](https://calm-retreat-63224.herokuapp.com/).
+* [Heroku](https://calm-retreat-63224.herokuapp.com/).
 
 
 ---
