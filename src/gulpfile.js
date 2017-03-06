@@ -18,7 +18,7 @@ gulp.task('heroku', function() {
          'git push heroku master',
          'heroku open'
          //Falta añadir el link de la app
-       ])));
+       ]));
 });
 
 
