@@ -22,7 +22,7 @@ En esta práctica nuestra misión es investigar acerca de las rutas en ExpressJS
 
 * [gh-pages del libro](https://github.com/ULL-ESIT-PL-1617/estudiar-las-rutas-en-expressjs-eduardo-guillermo-oscar-sergio).
 
-* [Gitbook](https://www.gitbook.com/book/alu0100881677/estudiar-las-rutas-en-express/details). 
+* [Gitbook](https://alu0100881677.gitbooks.io/estudiar-las-rutas-en-express/content/). 
 
 * [Heroku](https://calm-retreat-63224.herokuapp.com/).
 
