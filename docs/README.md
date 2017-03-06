@@ -20,7 +20,7 @@ En esta práctica nuestra misión es investigar acerca de las rutas en ExpressJS
 
 * [Github](https://github.com/ULL-ESIT-PL-1617/estudiar-las-rutas-en-expressjs-eduardo-guillermo-oscar-sergio).
 
-* [gh-pages del libro](https://github.com/ULL-ESIT-PL-1617/estudiar-las-rutas-en-expressjs-eduardo-guillermo-oscar-sergio).
+* [GitHub Pages](https://ull-esit-pl-1617.github.io/estudiar-las-rutas-en-expressjs-eduardo-guillermo-oscar-sergio/).
 
 ---
 ## Integrantes del equipo
